@@ -1,0 +1,26 @@
+table.pixelart *.background_red {
+	background-color: #f8c6c2;
+}
+table.pixelart *.background_white {
+	background-color: #ffffff;
+}
+table.pixelart *.bodyColor {
+	background-color: #b3896d;
+}
+table.pixelart *.headColor {
+	background-color: #664d4b;
+}
+table.pixelart *.wing_border {
+	background-color: #3b2a24;
+}
+table.pixelart *.wing_line_color {
+	background-color: #885a23;
+}
+table.pixelart *.wing_main_color {
+	background-color: #f9ab24;
+}
+table.pixelart *.wing_second_color {
+	background-color: #f3852e;
+}
+table.pixelart { border-collapse: collapse; }
+table.pixelart tr td { width: 1em; height: 1em; }
