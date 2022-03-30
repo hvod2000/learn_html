@@ -1,0 +1,19 @@
+@media (prefers-color-scheme: dark) {
+  html { background:  #333; color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+  html { background:  #white; color: #333; }
+}
+
+/* LoVe HAte */
+
+a:link { background-color: red; }
+a:visited { background-color: blue; }
+a:hover { background-color: green; }
+a:active { background-color: yellow; }
+
+a:link.tata { background-color: red; border: 0.2em solid blue; }
+a:visited.tata { background-color: blue; border: 0.2em solid green; }
+a:hover.tata { background-color: green; border: 0.2em solid yellow; }
+a:active.tata { background-color: yellow; border: 0.2em solid red; }
