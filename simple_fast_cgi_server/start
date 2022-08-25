@@ -1,5 +1,5 @@
 #!/bin/sh -e
 
 gcc hello.c -o hello.fcgi -lfcgi -O3 -Wall -Wextra -pedantic
-cgi-fcgi -start -connect localhost:9000 ./hello.fcgi
+cgi-fcgi -start -connect 127.0.0.1:9000 ./hello.fcgi
 nginx -c nginx.conf -p $PWD -e nginx.log
