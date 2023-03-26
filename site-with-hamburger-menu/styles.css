@@ -1,0 +1,100 @@
+html { min-height: 100vh; }
+body {
+	display: flex;
+	flex-direction: column;
+	background: #282828;
+	margin: 0; 
+	min-height: 100dvh;
+	font-family: sans-serif;
+	line-height: 1.6;
+}
+nav {
+	top: 0;
+	position: sticky;
+	display: flex;
+	flex-wrap: wrap;
+	font-family: Dosis, sans-serif;
+	font-size: 1.75rem;
+	color: #eee;
+	font-weight: 700;
+	background: linear-gradient(#222, #111);
+}
+nav label { margin-left: auto; padding: 0 1ch; user-select: none; z-index: 1; }
+nav label:hover, nav label:focus, nav input:focus ~ label {
+	background: linear-gradient(#f44, #a00);
+}
+nav input { position: absolute; opacity: 0; }
+nav > a:first-child { position: absolute; }
+nav ul {
+	list-style: none;
+}
+@media (width > 87ch) {
+	nav label { visibility: hidden; }
+	nav ul {
+		margin: 0;
+		display: flex;
+	}
+}
+@media (width <= 87ch) { /* TODO: get real size */
+	#toggle-menu:checked ~ ul {
+		background: #000b;
+		position: fixed;
+		top: 0;
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		height: 100svh;
+		padding-bottom: calc(100lvh - 100svh);
+		width: 100%;
+	}
+	nav {
+		flex-direction: column;
+	}
+	nav > ul { display:none; }
+}
+nav a { 
+	display: inline-block;
+	padding: 0 1ch;
+	text-transform: uppercase;
+	text-decoration: none; 
+	font-size: 1.75rem;
+	color: inherit;
+	text-shadow: #000 -1px 1px;
+} 
+nav a:hover, nav a.active, nav a:focus {
+	background: linear-gradient(#f44, #a00);
+}
+
+
+header {
+	text-align: center;
+	background: linear-gradient(#f44, #a00);
+	font-family: Dosis, sans-serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: white;
+}
+header a { 
+	color: inherit;
+	padding: 0 0.5ch;
+	text-decoration: none; 
+} 
+header a:hover, header a.active, header a:focus {
+	text-decoration:underline;
+}
+
+main {
+	color: white;
+	background: #222;
+	padding: 0 max(50% - 40ch, 1ch);
+}
+
+footer {
+	padding: 0.25rem max(50% - 40ch, 1ch);
+	background: #111;
+	color: #eee;
+	margin-top: auto;
+}
