@@ -20,7 +20,7 @@ nav {
 	background: linear-gradient(#222, #111);
 }
 nav label { margin-left: auto; padding: 0 1ch; user-select: none; z-index: 1; }
-nav label:hover, nav label:focus, nav input:focus ~ label {
+nav label:hover, nav input:focus-visible ~ label {
 	background: linear-gradient(#f44, #a00);
 }
 nav input { position: absolute; opacity: 0; }
@@ -64,7 +64,7 @@ nav a {
 	color: inherit;
 	text-shadow: #000 -1px 1px;
 } 
-nav a:hover, nav a.active, nav a:focus {
+nav a:hover, nav a.active, nav a:focus-visible {
 	background: linear-gradient(#f44, #a00);
 }
 
@@ -82,7 +82,7 @@ header a {
 	padding: 0 0.5ch;
 	text-decoration: none; 
 } 
-header a:hover, header a.active, header a:focus {
+header a:hover, header a.active, header a:focus-visible {
 	text-decoration:underline;
 }
 
