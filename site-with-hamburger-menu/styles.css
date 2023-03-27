@@ -65,7 +65,8 @@ nav a {
 	text-shadow: #000 -1px 1px;
 } 
 nav a:hover, nav a.active, nav a:focus-visible {
-	background: linear-gradient(#f44, #a00);
+	/* background: linear-gradient(#f44, #a00); */
+	background: linear-gradient(#a00, #f44);
 }
 
 
@@ -73,9 +74,13 @@ header {
 	text-align: center;
 	background: linear-gradient(#f44, #a00);
 	font-family: Dosis, sans-serif;
-	font-size: 2.5rem;
+	/* font-size: 2.5rem; */
+	font-size: 1.75rem;
 	font-weight: 700;
 	color: white;
+
+	position: sticky;
+	top: 0;
 }
 header a { 
 	color: inherit;
@@ -90,6 +95,10 @@ main {
 	color: white;
 	background: #222;
 	padding: 0 max(50% - 40ch, 1ch);
+}
+
+main > * {
+	background: #000;
 }
 
 footer {
