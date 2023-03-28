@@ -1,0 +1,96 @@
+html { min-height: 100vh; }
+body {
+	margin: 0; 
+	display: flex;
+	flex-direction: column;
+	color: #bbb;
+	background: #000;
+	min-height: 100dvh;
+	font-family: sans-serif;
+	line-height: 1.6;
+}
+a { 
+	color: inherit; 
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+
+*:focus-visible {
+	outline: solid #fff 2px;
+	outline-offset: 0.2ch;
+	border-radius: 2px;
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 75px max(50% - 600px, 1ch);
+	padding-bottom: 0;
+}
+
+nav > a.logo {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+nav > a.logo {
+	margin-right: 2ch;
+}
+
+nav > ul {
+	padding: 0;
+	margin: 0 0 0 auto;
+	font-weight: 400;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	column-gap: 2ch;
+}
+
+nav > ul > li {
+	min-width: clamp(0px, (64ch - 100svw) * 10000, 100%);
+}
+
+a.active {
+	color: #f54;
+}
+
+a:hover, a:focus-visible {
+	color: #fff;
+	text-shadow: #fff 0px 0 2px;
+}
+
+header {
+	text-align: right;
+	color: #f54;
+	padding: 0 max(50% - 600px, 1ch);
+	position: sticky;
+	top: 0;
+	margin-bottom: 75px;
+}
+header a { 
+	padding: 0 0.5ch;
+} 
+
+main {
+	padding: 0 max(50% - 600px, 1ch);
+}
+
+main p {
+	text-align: center;
+	margin: 1em auto;
+	max-width: 80ch;
+}
+
+footer {
+	padding: 0.25rem max(50% - 600px, 1ch);
+	margin-top: auto;
+}
