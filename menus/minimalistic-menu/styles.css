@@ -106,6 +106,6 @@ main p {
 }
 
 footer {
-	padding: 0.25rem max(50% - 40ch, 1ch);
+	padding: 0.25rem max(50% - 600px, 1ch);
 	margin-top: auto;
 }
