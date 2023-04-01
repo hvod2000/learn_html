@@ -67,17 +67,22 @@ window.onload = function () {
 	cvs.addEventListener("focus", (_) => {
 		cvs.scrollIntoView({ block: "center" });
 	});
+	let scroll = 0;
 	fullscreenButton.addEventListener("click", (_) => {
 		if (!document.fullscreenElement) {
+			scroll = window.pageYOffset;
 			cvs.requestFullscreen();
-			cvs.focus();
+			if (document.activeElement != cvs) {
+				cvs.focus();
+			}
 		} else if (document.exitFullscreen) {
 			document.exitFullscreen();
 		}
 	});
-	cvs.addEventListener("fullscreenchange", (event) => {
-		if (!document.fullscreenElement) {
+	cvs.addEventListener("fullscreenchange", (_) => {
+		if (!document.fullscreenElement && document.activeElement == cvs) {
 			document.activeElement.blur();
+			window.scrollTo(0, scroll);
 		}
 	});
 	document.addEventListener("keydown", (event) => {
