@@ -68,7 +68,7 @@ window.onload = function () {
 		cvs.scrollIntoView({ block: "center" });
 	});
 	let scroll = 0;
-	fullscreenButton.addEventListener("click", (_) => {
+	fullscreenButton.addEventListener("click", (event) => {
 		if (!document.fullscreenElement) {
 			scroll = window.pageYOffset;
 			cvs.requestFullscreen();
@@ -140,7 +140,7 @@ window.onload = function () {
 			ctx.font = "32px Monospace";
 			ctx.fillStyle = "#fff";
 			ctx.textAlign = "center";
-			ctx.fillText("click to play", cvs.width / 2, 32);
+			ctx.fillText("click to play", cvs.width / 2, cvs.height / 2 - 32);
 		}
 	}
 	function tick() {

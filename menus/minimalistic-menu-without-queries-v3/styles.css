@@ -127,7 +127,7 @@ main {
 	padding: 0 calc((100% - min(1200px, max(100% - 200px, min(800px, 90%)))) / 2);
 }
 
-main > * {
+main > p {
 	text-align: left;
 	width: fit-content;
 	margin-left: auto;
@@ -146,25 +146,30 @@ footer {
 }
 
 canvas {
-	width: min(100svh, 100%);
+	width: 100%;
 	display: block;
-	margin: 2em auto;
+	margin: 2em 0;
 	image-rendering: pixelated;
 }
 
 .canvas-container {
 	display: block;
 	position: relative;
-	width: auto;
+	width: min(100svh, 100%);
+	margin: 0 auto;
 }
 
 .canvas-container > button.fullscreen {
 	position: absolute;
+	margin: 0;
 	padding: 0;
-	font-size: 3em;
-	line-height: 1;
-	width: 1.04em;
-	height: 1.04em;
+	line-height: 1.1;
+	/* font-size: 6.667vh; */
+	/* width: 6.667vh; */
+	/* height: 6.667vh; */
+	font-size: max(3rem, min(6.667vh, 6.667vw));
+	width: max(3rem, min(6.667vh, 6.667vw));
+	height: max(3rem, min(6.667vh, 6.667vw));
 	bottom: 0;
 	right: 0;
 	border: none;
