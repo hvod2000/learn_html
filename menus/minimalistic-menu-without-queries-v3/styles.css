@@ -105,16 +105,11 @@ a.active {
 	color: #f54;
 }
 
-a:hover, a:focus-visible  {
+a:hover {
 	color: #fff;
 	text-shadow: #fff 0px 0 2px;
 }
-*:focus-visible {
-	z-index: 1;
-	outline: solid #fff 2px;
-	outline-offset: 0.2ch;
-	border-radius: 2px;
-}
+
 body > header {
 	grid-area: header;
 	padding: 0 calc((100% - min(1200px, max(100% - 200px, min(800px, 90%)))) / 2);
