@@ -40,6 +40,8 @@ window.onload = function () {
 	const DEFAULT_SNAKE_SIZE = 4;
 
 	const cvs = document.getElementById("snake");
+	const fullscreenButton =
+		cvs.parentElement.getElementsByClassName("fullscreen")[0];
 	cvs.width = cvs.height = CANVAS_SIZE;
 	const ctx = cvs.getContext("2d");
 	const cs = CANVAS_SIZE / GRID_SIZE | 0;
@@ -62,6 +64,22 @@ window.onload = function () {
 		}
 		grid_colors.push(grid_colors_row);
 	}
+	cvs.addEventListener("focus", (_) => {
+		cvs.scrollIntoView({ block: "center" });
+	});
+	fullscreenButton.addEventListener("click", (_) => {
+		if (!document.fullscreenElement) {
+			cvs.requestFullscreen();
+			cvs.focus();
+		} else if (document.exitFullscreen) {
+			document.exitFullscreen();
+		}
+	});
+	cvs.addEventListener("fullscreenchange", (event) => {
+		if (!document.fullscreenElement) {
+			document.activeElement.blur();
+		}
+	});
 	document.addEventListener("keydown", (event) => {
 		if (document.activeElement != cvs) return;
 		if (event.ctrlKey || event.altKey || event.shiftKey) return;
@@ -73,10 +91,6 @@ window.onload = function () {
 		if (event.key == "Escape") {
 			document.activeElement.blur();
 		}
-	});
-	cvs.addEventListener("focus", (_) => {
-		console.log("aboba");
-		cvs.scrollIntoView({ block: "center" });
 	});
 	function render() {
 		ctx.fillStyle = "#151621";

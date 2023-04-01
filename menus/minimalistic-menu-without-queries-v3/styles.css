@@ -146,11 +146,36 @@ footer {
 }
 
 canvas {
-	width: min(100dvh, 100%);
+	width: min(100svh, 100%);
 	display: block;
-	margin-top: 2em;
-	margin-bottom: 2em;
+	margin: 2em auto;
 	image-rendering: pixelated;
+}
+
+.canvas-container {
+	display: block;
+	position: relative;
+	width: auto;
+}
+
+.canvas-container > button.fullscreen {
+	position: absolute;
+	padding: 0;
+	font-size: 3em;
+	line-height: 1;
+	width: 1.04em;
+	height: 1.04em;
+	bottom: 0;
+	right: 0;
+	border: none;
+	text-decoration: none;
+	background: transparent;
+	color: #aaa;
+}
+
+.canvas-container > button.fullscreen:hover {
+	color: #fff;
+	text-shadow: #fff 0px 0 2px;
 }
 
 @media screen and (prefers-color-scheme: light) {
