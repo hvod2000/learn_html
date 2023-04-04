@@ -1,0 +1,23 @@
+html {
+	min-height: 100%;
+	color-scheme: light dark;
+	color: #bbb;
+	background: #000;
+	margin: 0;
+	padding: 0;
+}
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+canvas {
+	display: block;
+	height: 100%;
+	margin: auto;
+}
+
+.wrapper {
+	height: 100vh;
+}
