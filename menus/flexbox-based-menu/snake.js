@@ -136,7 +136,7 @@ window.onload = function () {
 		}
 		ctx.fillStyle = "#ff0000";
 		ctx.fillRect(1 + apple.x * cs, 1 + apple.y * cs, cs - 2, cs - 2);
-		if (document.activeElement != cvs) {
+		if (!document.hasFocus() || document.activeElement != cvs) {
 			ctx.font = "32px Monospace";
 			ctx.fillStyle = "#fff";
 			ctx.textAlign = "center";
@@ -144,7 +144,7 @@ window.onload = function () {
 		}
 	}
 	function tick() {
-		if (document.activeElement != cvs) return;
+		if (!document.hasFocus() || document.activeElement != cvs) return;
 		if (!snake.direction.x && !snake.direction.y) return;
 		snake.x += snake.direction.x ?? 0;
 		snake.y += snake.direction.y ?? 0;
