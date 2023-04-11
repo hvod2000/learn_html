@@ -1,23 +1,36 @@
-:root {
-	--fg: #bbb;
-	--bg: #000;
-	--link-active: #f54;
-	--link-hower: #fff;
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--fg: #fff;
+		--bg: #324;
+	}
+	header, nav {
+		--fg: #fff;
+		--bg: #827;
+	}
+	footer {
+		--fg: #fff;
+		--bg: #000;
+	}
 }
-
 
 @media screen and (prefers-color-scheme: light) {
 	:root {
-		--fg: #222;
-		--bg: #f7f7f7;
-		--link-active: #f00;
-		--link-hower: #000;
+		--fg: #000;
+		--bg: #fff;
+	}
+	header, nav {
+		--fg: #fff;
+		--bg: #938;
+	}
+	footer {
+		--fg: #fff;
+		--bg: #324;
 	}
 }
 
 nav, header, footer {
-	color: var(--alt-fg);
-	background: var(--alt-bg);
+	color: var(--fg);
+	background: var(--bg);
 }
 
 body > header > img, canvas {
@@ -47,7 +60,7 @@ body {
 body > header > img {
 	display: block;
 	margin: 0 auto;
-	width: min(clamp(clamp(320px, (100% - 640px + 1px) * 1000, 640px), (100% - 960px + 1px) * 1000, 960px), 100%);
+	width: min(clamp(clamp(320px, (min(90svh, 100%) - 640px + 1px) * 1000, 640px), (min(90svh, 100%) - 960px + 1px) * 1000, 960px), 100%);
 	image-rendering: pixelated;
 }
 
@@ -108,23 +121,23 @@ nav {
 	margin-top: 0.5rem;
 	width: 100%;
 	font-size: 0.8rem;
-	color: var(--link-active);
 	overflow-wrap: manual;
 	column-gap: 0.6ch;
 }
 
 .local-path > a:not(:first-child)::before {
 	content: "/ ";
+	text-decoration: none;
 }
 
 
 a.active {
-	color: var(--link-active);
+	text-decoration: underline;
+	text-underline-offset: 0.4em;
 }
 
 a:hover {
-	color: var(--link-hower);
-	text-shadow: var(--link-hower) 0px 0 2px;
+	text-shadow: 0px 0 0.5ch, 0px 0 0.1ch;
 }
 
 body > header {
@@ -150,10 +163,10 @@ main > p {
 footer {
 	line-height: 2.5;
 	font-size: 0.9rem;
-	/* font-size: 0.8rem; */
+	color: var(--fg);
+	background: var(--bg);
 	font-weight: 100;
 	grid-area: footer;
-	/* margin: min(50px, 2.5vw) max(50% - 600px, min(75px, 7.5%)); */
 	padding: max(1em, 4vw) calc((100% - min(1200px, max(100% - 200px, min(80ch, 90%)))) / 2);
 }
 
