@@ -1,48 +1,33 @@
 @media screen and (prefers-color-scheme: dark) {
-	:root {
-		--fg: #fff;
-		--bg: #324;
-	}
-	header, nav {
-		--fg: #fff;
-		--bg: #827;
-	}
-	footer {
-		--fg: #fff;
-		--bg: #000;
-	}
+	header, nav { --fg: #fff; --bg: #827; }
+	main { --fg: #fff; --bg: #324; }
+	footer { --fg: #fff; --bg: #000; }
 }
 
 @media screen and (prefers-color-scheme: light) {
-	:root {
-		--fg: #000;
-		--bg: #fff;
-	}
-	header, nav {
-		--fg: #fff;
-		--bg: #938;
-	}
-	footer {
-		--fg: #fff;
-		--bg: #324;
-	}
+	header, nav { --fg: #fff; --bg: #938; }
+	main { --fg: #000; --bg: #fff; }
+	footer { --fg: #fff; --bg: #000; }
 }
 
-nav, header, footer {
-	color: var(--fg);
-	background: var(--bg);
+:root {
+	--img-width: min(100%, clamp(
+		clamp(320px, (min(80svh, 100%) - 640px + 1px) * 1000, 640px),
+		(min(90svh, 100%) - 960px + 1px) * 1000, 960px));
+	--txt-width: min(1200px, max(100% - 200px, min(800px, 90%)));
 }
 
-body > header > img, canvas {
-	box-shadow: 0 0 0 2px #000;
+body > * { color: var(--fg); background: var(--bg); }
+
+main img, main canvas {
+	box-shadow: 0 0 0 4px #324;
 }
 
 html {
 	color-scheme: light dark;
-	min-height: 100vh;
-	color: var(--fg);
-	background: var(--bg);
+	/* min-height: 100vh; */
 }
+
 body {
 	margin: 0;
 	display: grid;
@@ -60,7 +45,7 @@ body {
 body > header > img {
 	display: block;
 	margin: 0 auto;
-	width: min(clamp(clamp(320px, (min(90svh, 100%) - 640px + 1px) * 1000, 640px), (min(90svh, 100%) - 960px + 1px) * 1000, 960px), 100%);
+	width: var(--img-width);
 	image-rendering: pixelated;
 }
 
@@ -86,9 +71,8 @@ nav {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	font-family: sans-serif;
 	text-align: center;
-	padding: 75px calc((100% - min(1200px, max(100% - 200px, min(800px, 90%)))) / 2);
+	padding: 75px calc((100% - var(--txt-width)) / 2);
 }
 
 .logo, .global-menu {
@@ -104,8 +88,8 @@ nav {
 .global-menu {
 	padding: 0;
 	margin: 0 0 0 auto;
-	width: min(100%, 500px);
 	width: clamp(400px, (500px - 100%) * 1000, 100%);
+	/* TODO: change font-size depending on available width */
 	font-size: 0.8rem;
 	display: flex;
 	flex-wrap: wrap;
@@ -121,13 +105,11 @@ nav {
 	margin-top: 0.5rem;
 	width: 100%;
 	font-size: 0.8rem;
-	overflow-wrap: manual;
 	column-gap: 0.6ch;
 }
 
 .local-path > a:not(:first-child)::before {
 	content: "/ ";
-	text-decoration: none;
 }
 
 
@@ -142,14 +124,14 @@ a:hover {
 
 body > header {
 	grid-area: header;
-	padding: 0 calc((100% - min(1200px, max(100% - 200px, min(800px, 90%)))) / 2);
+	padding: 0 calc((100% - var(--txt-width)) / 2);
 	padding-bottom: 25px;
 	font-size: 0.9rem;
 }
 
 main {
 	grid-area: main;
-	padding: 0 calc((100% - min(1200px, max(100% - 200px, min(800px, 90%)))) / 2);
+	padding: 0 calc((100% - var(--txt-width)) / 2);
 }
 
 main > p {
@@ -167,7 +149,7 @@ footer {
 	background: var(--bg);
 	font-weight: 100;
 	grid-area: footer;
-	padding: max(1em, 4vw) calc((100% - min(1200px, max(100% - 200px, min(80ch, 90%)))) / 2);
+	padding: max(1em, 4vw) calc((100% - var(--txt-width)) / 2);
 }
 
 canvas {
