@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Simple SVG editor </title>
+	<meta name="description" content="Simple SVG editor optimized for editing icons 16x16 pixels">
+	<link href="data:" rel="icon">
+	<link href="./styles.css" rel="stylesheet">
+	<script async src="./script.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Simple SVG editor</h1>
+		<p>Simple SVG editor optimized for editing icons 16x16 pixels</p>
+	</header>
+	<main>
+		<div id=editor></div>
+		<div id=source contenteditable=true>
+			&lt;svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 16 16"&gt;
+			&lt;path fill="#fff" d="M0 0v7h3V5h1v2h3V0H4v2H3V0m6 0l2 7h3l2-7h-3l-.5 2L12 0Z m-8 9-1 1v5l1 1h5l1-1v-5L6
+			9H1zm2 3h1v1H3v-1zM9 9l2 3.5L9 16h3l.5-.85.5.85h3l-2-3.5L16 9h-3l-.5.85L12 9H9z"/&gt;
+			&lt;/svg&gt;
+		</div>
+	</main>
+</body>
+
+</html>
