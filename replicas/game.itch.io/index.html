@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title> Game page replica of itch.io webpages</title>
+	<meta name="description" content="Testing my itch.io game without uploading files to itch.io">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="data:" rel="icon">
+</head>
+
+<body style="margin: 0; min-height: 100vh; background: #eee">
+	<header style="width: 100%; height: 50px; background: #585858;">
+	</header>
+	<main style="background: #fff; width: 960px; margin: 0 auto; padding: 20px 0;">
+		<div style="width: 720px; height: 720px; margin: 0 auto; background:#000; position: relative;">
+			<button title="Enter fullscreen" onclick="document.getElementById('game').requestFullscreen()"
+				style="position: absolute; bottom: 0; right: 0; background: none; border: 0; margin: 8px; padding: 0; height: 30px; opacity: 0.4;">
+				<svg style="width: 30px; height: 30px; margin: 0;" viewBox="0 0 709 709">
+					<path fill="#fff" stroke="#000" stroke-width="10"
+						d="M15,5a10,10,0,0,0,-10,10v679a10,10,0,0,0,10,10h679a10,10,0,0,0,10,-10v-679a10,10,0,0,0,-10,-10h-679zm10,20h659v659h-659v-659zm73,73v208l80,-80l96,96l48,-48l-96,-96l80,-80h-208zm304,0l80,80l-96,96l48,48l96,-96l80,80v-208h-208zm-128,288l-96,96l-80,-80v208h208l-80,-80l96,-96l-48,-48zm160,0l-48,48l96,96l-80,80h208v-208l-80,80l-96,-96z" />
+				</svg>
+			</button>
+			<iframe width=100% height=100% allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" scrolling="no" src="./game/index.html" msallowfullscreen="true" id="game" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated" frameborder="0"></iframe>
+		</div>
+		<div style="margin: 20px; line-height: 1.4; font-family: Lato, sans-serif;">
+			<p> This game is cool! </p>
+			<p> Play it now! </p>
+		</div>
+	</main>
+</body>
+
+</html>
+
