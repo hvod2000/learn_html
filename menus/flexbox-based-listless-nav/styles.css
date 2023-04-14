@@ -14,7 +14,6 @@
 	color-scheme: light dark;
 	line-height: 1.6;
 	--width: min(1200px, max(100% - 200px, min(800px, 90%)));
-	--img-width: min(100%, clamp(320px, (min(80svh, 100%) - 640px + 1px) * 1000, 640px));
 }
 
 body {
@@ -52,7 +51,7 @@ nav > .global {
 	flex-wrap: wrap;
 	column-gap: 1ch;
 	justify-content: space-around;
-	width: clamp(600px, (900px - 100%) * 1000, 100%);
+	width: clamp(600px, (900px - 100%) * 9999, 100%);
 	font-size: clamp(0.8rem, (100vw - 200px) / 20, 1.25rem);
 
 }
@@ -67,12 +66,20 @@ nav > .local {
 }
 
 header { padding-bottom: 50px; }
-header img, main .game {
+.b16x9, .b1x1 {
 	display: block;
 	position: relative;
-	width: var(--img-width);
 	margin: 20px auto;
 }
+.b16x9 {
+	aspect-ratio: 16/9;
+	width: min(100%, clamp(320px, (min(80svh, 100%) - 640px + 1px) * 9999, 640px));
+}
+.b1x1 {
+	aspect-ratio: 1/1;
+	width: min(100%, clamp(360px, (min(80svh, 100%) - 720px + 1px) * 9999, 720px));
+}
+
 canvas {
 	display: block;
 	width: 100%;
@@ -91,9 +98,9 @@ button.fullscreen {
 	margin: 0;
 	padding: 0;
 	line-height: 1.1;
-	font-size: max(2rem, min(5vh, 5vw));
-	width: max(2rem, min(5vh, 5vw));
-	height: max(2rem, min(5vh, 5vw));
+	font-size: 48px;
+	width: 48px;
+	height: 48px;
 	bottom: 0;
 	right: 0;
 	border: none;
@@ -107,4 +114,7 @@ button.fullscreen:hover {
 	text-shadow: #fff 0px 0 4px;
 }
 
-footer { padding: 75px calc((100% - var(--width)) / 2); }
+footer {
+	padding: 75px calc((100% - var(--width)) / 2);
+	font-size: clamp(0.8rem, 3vw, 1rem);
+}
