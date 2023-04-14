@@ -22,7 +22,7 @@ export default class SnakeGame {
 		container.style["aspect-ratio"] = "1/1";
 		const cvs = document.createElement("canvas");
 		cvs.style.imageRendering = "pixelated";
-		cvs.style.backgroundColor = "#324";
+		cvs.style.backgroundColor = "#213";
 		cvs.width = cvs.height = SnakeGame.CANVAS_SIZE;
 		cvs.tabIndex = 0;
 		container.prepend(cvs);
