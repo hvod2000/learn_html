@@ -22,6 +22,7 @@ export default class SnakeGame {
 		container.style["aspect-ratio"] = "1/1";
 		const cvs = document.createElement("canvas");
 		cvs.style.imageRendering = "pixelated";
+		cvs.style.backgroundColor = "#324";
 		cvs.width = cvs.height = SnakeGame.CANVAS_SIZE;
 		cvs.tabIndex = 0;
 		container.prepend(cvs);
@@ -36,8 +37,10 @@ export default class SnakeGame {
 		cvs.addEventListener("blur", _ => this.paused = true);
 		cvs.addEventListener("keydown", event => this.keydown(event));
 		cvs.addEventListener("fullscreenchange", _ => {
-			if (this.paused = document.fullscreenElement != this.canvas)
+			if (document.fullscreenElement != this.canvas)
 				this.canvas.blur();
+			else
+				this.canvas.focus();
 		});
 		let lastTick = 0;
 		const loop = t => {
@@ -95,7 +98,7 @@ export default class SnakeGame {
 		const { CANVAS_SIZE, GRID_SIZE } = this.constructor;
 		const { ctx, grid_colors, tail, eaten_tail, apple } = this;
 		const cs = CANVAS_SIZE / GRID_SIZE | 0;
-		ctx.fillStyle = "#151621";
+		ctx.fillStyle = "#213";
 		ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 		for (let x = 0; x < GRID_SIZE; x++) {
 			for (let y = 0; y < GRID_SIZE; y++) {
@@ -103,7 +106,7 @@ export default class SnakeGame {
 				ctx.fillRect(1 + x * cs, 1 + y * cs, cs - 2, cs - 2);
 			}
 		}
-		ctx.fillStyle = "#00880055";
+		ctx.fillStyle = "#0004";
 		for (let i = 0; i < eaten_tail.length; i++) {
 			ctx.fillRect(
 				1 + eaten_tail[i].x * cs,
@@ -115,7 +118,7 @@ export default class SnakeGame {
 		if (Math.random() < eaten_tail.length / GRID_SIZE / GRID_SIZE / 2) {
 			eaten_tail.splice(randomInteger(0, eaten_tail.length), 1);
 		}
-		ctx.fillStyle = "#00ff00";
+		ctx.fillStyle = "#f3f";
 		for (let i = 0; i < tail.length; i++) {
 			ctx.fillRect(
 				1 + tail[i].x * cs,
@@ -124,7 +127,7 @@ export default class SnakeGame {
 				cs - 2,
 			);
 		}
-		ctx.fillStyle = "#ff0000";
+		ctx.fillStyle = "#f08";
 		ctx.fillRect(1 + apple.x * cs, 1 + apple.y * cs, cs - 2, cs - 2);
 		if (this.paused) ctx.drawImage(pauseMsgImage, 85, 173, 190, 14);
 	}
@@ -183,7 +186,9 @@ function merge(u, v, alpha) {
 }
 
 function randomGridColor() {
-	const color = merge([43, 43, 54], [23, 24, 34], Math.random());
+	// const color = merge([43, 43, 54], [23, 24, 34], Math.random());
+	// const color = merge([51, 34, 68], [136, 34, 119], Math.random());
+	const color = merge([51, 34, 68], [91, 34, 101], Math.random());
 	return "rgb(" + color[0] + "," + color[1] + "," + color[2] + ")";
 }
 
