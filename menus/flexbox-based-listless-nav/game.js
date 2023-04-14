@@ -36,12 +36,12 @@ export default class SnakeGame {
 		cvs.addEventListener("focus", _ => this.paused = false);
 		cvs.addEventListener("blur", _ => this.paused = true);
 		cvs.addEventListener("keydown", event => this.keydown(event));
-		cvs.addEventListener("fullscreenchange", _ => {
-			if (document.fullscreenElement != this.canvas)
-				this.canvas.blur();
-			else
-				this.canvas.focus();
-		});
+		// cvs.addEventListener("fullscreenchange", _ => {
+		// 	if (document.fullscreenElement != this.canvas)
+		// 		this.canvas.blur();
+		// 	else
+		// 		this.canvas.focus();
+		// });
 		let lastTick = 0;
 		const loop = t => {
 			window.requestAnimationFrame(loop);
