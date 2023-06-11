@@ -1,0 +1,65 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@font-face { font-family: "Bellota"; src: url("Bellota-Regular.otf"); }
+@font-face { font-family: "Jura"; src: url("Jura.otf"); }
+
+:root {
+	color-scheme: light dark;
+	font: 400 1rem/1.5 DejaVu Sans Condensed, Nimbus Sans L, Helvetica, sans-serif;
+	/* font: 400 1rem/1.5 Roboto; */
+	/* font: 400 1rem/1.5 aboba, Nimbus Sans L, Helvetica, sans-serif; */
+	/* font: 400 1rem/1.5 Roboto, monospace; */
+	/* font: 400 1rem/1.5 Liberation Mono, Consolas, DejaVu Sans Mono, monospace; */
+	/* btw 788px is enough for 80 chars of most monospace fonts */
+	--width: min(1200px, max(100% - 200px, min(373px, 95%)));
+	--width: max(min((100% - 1150px) * 9999, min(1200px, 100% - 200px)), min(600px, 95%));
+}
+
+a {
+	color: inherit;
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	color: #fff;
+	background: #827;
+	padding: 85px calc(50% - var(--width) / 2);
+    container-type: inline-size;
+}
+
+header > a {
+	font-weight: 900;
+	font-size: min(16cqw, 3rem);
+}
+
+nav:first-of-type {
+	font-weight: 900;
+	display: flex;
+	font-size: min(4.3cqw, 1.5rem);
+	flex-wrap: wrap;
+	justify-content: center;
+	justify-content: space-between;
+	width: clamp(600px, (900px - 100%) * 9999, 100%);
+	margin-left: auto;
+}
+
+nav:last-of-type {
+	width: min(100%, 667px);
+	white-space: nowrap;
+	font-size: min(3.595cqw, 1.5rem);
+	margin-top: 9px;
+	/* text-align: justify; */
+	/* text-align-last: justify; */
+}
+
+main {
+	/* width: 800px; */
+	margin: auto;
+}
+
+header a:not(.active) { text-decoration: none; }
+header a { text-underline-offset: 0.4em; }
+header a:hover { text-decoration: underline; }
