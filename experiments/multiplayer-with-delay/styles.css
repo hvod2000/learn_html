@@ -1,0 +1,8 @@
+:root {
+	color-scheme: dark light;
+}
+
+canvas {
+	width: 100%;
+	image-rendering: pixelated;
+}
