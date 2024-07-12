@@ -1,0 +1,30 @@
+:root {
+	color-scheme: dark light;
+}
+
+
+html {
+	min-height: 100vh;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	margin: 0 1ch;
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer {
+	margin: 0 1ch;
+}
